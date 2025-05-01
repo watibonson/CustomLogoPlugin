@@ -70,5 +70,9 @@ It utilizes standard plugin APIs to ensure functionality with future Jellyfin up
 
 ---
 
+## 📄 License
+
+MIT License
+
 
 
