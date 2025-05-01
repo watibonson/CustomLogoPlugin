@@ -2,7 +2,7 @@
   "id": "2f14d3ec-7f4d-4dfc-b0ce-1a8d7a70d999",
   "name": "Custom Logo",
   "description": "Replace Jellyfin logos with a custom upload",
-  "owner": "yourusername",
+  "owner": "bvolvy",
   "category": "Appearance",
   "versions": [
     {
