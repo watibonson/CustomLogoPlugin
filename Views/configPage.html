@@ -1,0 +1,18 @@
+<h3>Upload Custom Logo</h3>
+<input type="file" id="logoFile" accept="image/*" />
+<button onclick="upload()">Upload</button>
+<script>
+  function upload() {
+    const fileInput = document.getElementById('logoFile');
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+
+    fetch('/Plugins/CustomLogo/UploadLogo', {
+      method: 'POST',
+      body: formData
+    }).then(res => {
+      if (res.ok) alert('Logo uploaded');
+      else alert('Upload failed');
+    });
+  }
+</script>
