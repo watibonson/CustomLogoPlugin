@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <AssemblyName>Jellyfin.Plugin.CustomLogo</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="MediaBrowser.Common" Version="10.10.6" />
-    <PackageReference Include="MediaBrowser.Controller" Version="10.10.6" />
-    <PackageReference Include="MediaBrowser.Model" Version="10.10.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Jellyfin.Sdk" Version="10.8.0" />
+    <PackageReference Include="MediaBrowser.Common" Version="10.8.0" />
+    <PackageReference Include="MediaBrowser.Controller" Version="10.8.0" />
+    <PackageReference Include="MediaBrowser.Model" Version="10.8.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
   </ItemGroup>
 </Project>
