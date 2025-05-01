@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.lock.json
