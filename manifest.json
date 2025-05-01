@@ -1,15 +1,13 @@
 {
-  "id": "2f14d3ec-7f4d-4dfc-b0ce-1a8d7a70d999",
+  "id": "abcdef01-2345-6789-abcd-ef0123456789",
   "name": "Custom Logo",
-  "description": "Replace Jellyfin logos with a custom upload",
-  "owner": "bvolvy",
-  "category": "Appearance",
-  "versions": [
-    {
-      "version": "1.0.0",
-      "targetAbi": "10.10.6.0",
-      "sourceUrl": "https://github.com/yourusername/CustomLogoPlugin/releases/download/v1.0.0/CustomLogoPlugin.zip",
-      "checksum": "<sha256-checksum>"
-    }
-  ]
+  "version": "1.0.0",
+  "targetAbi": "10.7.0.0",
+  "description": "Replace the default Jellyfin logo with your own.",
+  "owner": "bvovy",
+  "category": "General",
+  "pluginId": "CustomLogo",
+  "guid": "abcdef01-2345-6789-abcd-ef0123456789",
+  "imageUrl": "https://raw.githubusercontent.com/bvolvy/CustomLogoPlugin/main/static/icon.png",
+  "configurationFileName": "configPage.html"
 }
