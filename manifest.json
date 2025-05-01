@@ -10,7 +10,7 @@
     "versions": [
       {
         "version": "1.0.0",
-        "targetAbi": "10.8.0.0",
+        "targetAbi": "10.10.0.0",
         "sourceUrl": "https://github.com/bvolvy/CustomLogoPlugin/archive/refs/tags/v1.0.0.zip",
         "checksum": "cd225c0becb8f2734c6ee9b4608ef39233ebfbace70240a2eeddbeff3461da60",
         "timestamp": "2025-04-30T23:00:00Z"
