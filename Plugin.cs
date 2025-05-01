@@ -12,6 +12,6 @@ namespace CustomLogoPlugin
         public Plugin(IApplicationPaths applicationPaths)
             : base(applicationPaths) { }
 
-        public override Guid Id => Guid.Parse("abcdef01-2345-6789-abcd-ef0123456789");
+        public override Guid Id => Guid.Parse("b7e8dce1-44df-4b37-91a3-15fcf9f3b76a");
     }
 }
