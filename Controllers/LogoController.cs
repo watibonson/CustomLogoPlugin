@@ -1,41 +1,30 @@
+using MediaBrowser.Controller.Net;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
+using System.Threading.Tasks;
 
-namespace Jellyfin.Plugin.CustomLogo.Controllers
+namespace CustomLogoPlugin.Controllers
 {
-    [Route("Plugins/CustomLogo")]
-    public class LogoController : ControllerBase
+    [Route("customlogo")]
+    public class LogoController : BaseApiController
     {
-        [HttpGet("Logo")]
-        public IActionResult GetLogo()
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadLogo()
         {
-            var path = Plugin.Instance.Configuration.LogoPath;
-            if (string.IsNullOrEmpty(path) || !System.IO.File.Exists(path))
-                return NotFound();
-            var bytes = System.IO.File.ReadAllBytes(path);
-            return File(bytes, "image/png");
-        }
-
-        [HttpPost("UploadLogo")]
-        public IActionResult UploadLogo([FromForm] IFormFile file)
-        {
+            var file = Request.Form.Files["file"];
             if (file == null || file.Length == 0)
-                return BadRequest("No file");
+                return BadRequest("No file uploaded.");
 
-            var dir = Path.Combine(
-                Plugin.Instance.ApplicationPaths.PluginsPath,
-                "CustomLogo");
+            var path = Path.Combine(Plugin.Instance.ConfigurationManager.ApplicationPaths.ConfigurationDirectoryPath, "customlogo.png");
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
 
-            Directory.CreateDirectory(dir);
-            var filePath = Path.Combine(dir, file.FileName);
-
-            using var stream = new FileStream(filePath, FileMode.Create);
-            file.CopyTo(stream);
-
-            Plugin.Instance.Configuration.LogoPath = filePath;
+            Plugin.Instance.Configuration.LogoPath = path;
             Plugin.Instance.SaveConfiguration();
 
-            return NoContent();
+            return Ok("Logo uploaded successfully.");
         }
     }
 }
